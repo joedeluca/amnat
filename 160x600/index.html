@@ -31,12 +31,6 @@
         transform: translateX(-50%);
         z-index: 1;
       }
-      #logo_2 {
-        top: 350px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1;
-      }
       #bottomBar {
         position: absolute;
         opacity: 0;
@@ -46,37 +40,29 @@
         background-color: #ffb81c;
         z-index: 0;
       }
-      #finalBox {
-        position: absolute;
-        opacity: 0;
-        bottom: 0px;
-        width: 160px;
-        height: 200px;
-        background-color: #ffb81c;
-        z-index: 0;
-      }
       #text_1 {
-        top: 260px;
-        left: 12px;
+        top: 408px;
+        left: 4px;
       }
       #text_1b {
-        top: 246px;
-        left: 12px;
+        top: 249px;
+        left: 14px;
       }
       #text_2 {
-        top: 250px;
-        left: 50%;
+        top: 408px;
+        left: 14px;
       }
       #text_3 {
-        top: 250px;
-        left: 50%;
+        top: 408px;
+        left: 4px;
       }
       #text_4 {
-        top: 410px;
+        top: 30px;
         left: 50%;
+        transform: translateX(-50%);
       }
       #text_5 {
-        top: 460px;
+        top: 435px;
         left: 50%;
         transform: translateX(-50%);
       }
@@ -86,21 +72,18 @@
         position: absolute;
         cursor: pointer;
         z-index: 2;
-        bottom: 10px;
+        top: 578px;
         left: 50%;
         transform: translateX(-50%);
         width: 160px;
-        font-size: 6px;
+        font-size: 7px;
         text-transform: uppercase;
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
         color: #061b2c;
       }
-      #cta_text:hover {
-        opacity: 0.5;
-      }
       #cta {
-        bottom: 40px;
+        top: 510px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 3;
@@ -111,17 +94,9 @@
   <body>
     <div id="banner" class="banner">
       <div id="bottomBar"></div>
-      <div id="finalBox"></div>
       <img
         src="logo.png"
         id="logo"
-        width="100"
-        height="30"
-        alt="American National Logo"
-      />
-      <img
-        src="logo_2.png"
-        id="logo_2"
         width="100"
         height="30"
         alt="American National Logo"
@@ -133,29 +108,20 @@
         alt="Background"
       />
       <img
+        id="bg2Img"
+        src="bg2.png"
+        style="position: absolute; top: 30; left: 0; opacity: 0; z-index: 0"
+        alt="Background 2"
+      />
+      <img
         id="text_1a"
         src="text_1a.png"
-        style="position: absolute; top: 300px; left: 12px; opacity: 0"
+        style="position: absolute; top: 324px; left: 14px; opacity: 0"
       />
-      <img
-        id="text_1"
-        src="text_1.png"
-        style="position: absolute; top: 390px; left: 2px"
-      />
+      <img id="text_1" src="text_1.png" />
       <img id="text_1b" src="text_1b.png" />
       <img id="text_2" src="text_2.png" alt="Growth" />
-      <img
-        id="text_3"
-        src="text_3.png"
-        alt="Text 3"
-        style="
-          position: absolute;
-          top: 250px;
-          left: 50%;
-          transform: translateX(-50%);
-          opacity: 0;
-        "
-      />
+      <img id="text_3" src="text_3.png" alt="Text 3" />
       <img id="text_4" src="text_4.png" />
       <img id="text_5" src="text_5.png" alt="Text 5" />
       <span id="cta_text">Click for Details</span>
@@ -165,7 +131,7 @@
     <script>
       // Animation configuration
       const TIMING = {
-        sceneDuration: 2000, // Time between scenes
+        sceneDuration: 2, // Time between scenes
         fadeSpeed: 0.5, // Fade in/out speed
         slideDistance: 10, // Horizontal slide distance in pixels
       }
@@ -241,26 +207,24 @@
           // Fade out previous scene
           .to("#bgImg", { duration: TIMING.fadeSpeed, opacity: 0 }, "scene4")
           .to("#text_3", { duration: TIMING.fadeSpeed, opacity: 0 }, "scene4")
+          .to("#logo", { duration: TIMING.fadeSpeed, opacity: 0 }, "scene4")
           .to("#text_1b", { duration: TIMING.fadeSpeed, opacity: 0 }, "scene4")
           .to("#text_1a", { duration: TIMING.fadeSpeed, opacity: 0 }, "scene4")
-          .to("#logo", { duration: TIMING.fadeSpeed, opacity: 0 }, "scene4")
-          // Fade in final scene
+          // Reposition logo after fade out
+          .set("#logo", { top: 190, y: 0 })
+          // Fade in bg2
           .to(
-            "#finalBox",
+            "#bg2Img",
             { duration: TIMING.fadeSpeed, opacity: 1 },
             "scene4+=.5"
           )
+          // Fade in logo and text_4
+          .to("#logo", { duration: TIMING.fadeSpeed, opacity: 1 }, "scene4+=.5")
           .to(
             "#text_4",
             { duration: TIMING.fadeSpeed, opacity: 1 },
             "scene4+=.5"
           )
-          .to(
-            "#logo_2",
-            { duration: TIMING.fadeSpeed, opacity: 1 },
-            "scene4+=.5"
-          )
-          // CTA and text_5 come in last
           .to(
             "#text_5",
             {
