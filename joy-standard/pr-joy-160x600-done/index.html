@@ -1,0 +1,534 @@
+<html>
+  <head>
+    <title>AA Joy 160x600</title>
+    <meta name="ad.size" content="width=160,height=600" />
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.11.5_min.js"></script>
+    <script type="text/javascript">
+      var clickTag = "http://Annuities.AmericanNational.com/#calculator"
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .banner {
+        background-color: #061b2c;
+        width: 158px;
+        height: 598px;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid black;
+        color: white;
+        cursor: pointer;
+      }
+      img {
+        position: absolute;
+        opacity: 0;
+      }
+      #logo {
+        bottom: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+      }
+      #logo_2 {
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+      }
+      #bottomBar {
+        position: absolute;
+        opacity: 0;
+        bottom: 0;
+        width: 160px;
+        height: 98px;
+        background-color: #ffb81c;
+        z-index: 0;
+      }
+      #text_1 {
+        top: 60px;
+        left: 14px;
+      }
+      #text_2,
+      #text_3,
+      #text_4 {
+        top: 370px;
+        left: 9px;
+      }
+      #text_2 {
+        left: 5px;
+      }
+      #text_3 {
+        top: 374px;
+      }
+      #text_4 {
+        top: 370px;
+        left: 10px;
+      }
+      #text_5 {
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      #text_6 {
+        top: 124px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      #cta_text {
+        opacity: 0;
+        position: absolute;
+        z-index: 2;
+        bottom: 22px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 7px;
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #fff;
+        width: 100%;
+        text-align: center;
+      }
+      #photo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 160px;
+        height: 600px;
+      }
+      .preloader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        gap: 5px;
+      }
+      #cta {
+        position: absolute;
+        z-index: 3;
+        opacity: 0;
+        top: 510px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 51px;
+        width: 99px;
+        background-image: url("button_up.png");
+        background-size: cover;
+        border: none;
+        cursor: pointer;
+      }
+      #cta:hover {
+        background-image: url("button_down.png");
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+        background-color: white;
+        border-radius: 50%;
+      }
+      #ribbon {
+        position: absolute;
+        z-index: 1;
+        width: 800px;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="banner"
+      class="banner"
+      onclick="window.open(window.clickTag);void(0)"
+    >
+      <div id="bottomBar"></div>
+      <img
+        src="logo.png"
+        id="logo"
+        width="264"
+        height="74"
+        alt="American National Logo"
+      />
+      <img
+        src="logo_2.png"
+        id="logo_2"
+        width="276"
+        height="78"
+        alt="American National Logo"
+      />
+      <img
+        id="text_1"
+        src="text_1.png"
+        height="192"
+        width="215"
+        alt="The Simple Joy of"
+      />
+      <img id="text_2" src="text_2.png" height="93" width="277" alt="Growth" />
+      <img id="text_3" src="text_3.png" height="93" width="253" alt="Text 3" />
+      <img id="text_4" src="text_4.png" height="135" width="185" alt="Text 4" />
+      <img id="text_5" src="text_5.png" height="509" width="249" alt="Text 5" />
+      <img id="text_6" src="text_6.png" height="117" width="246" alt="Text 6" />
+      <img id="photo" src="photo.png" alt="Photo" />
+      <span id="cta_text">Click for Details</span>
+      <div id="cta" style="min-height: 51px; min-width: 99px"></div>
+      <svg xmlns="http://www.w3.org/2000/svg" id="ribbon" viewBox="0 0 800 175">
+        <defs>
+          <style>
+            .cls-1 {
+              fill: #fed375;
+            }
+            .cls-2 {
+              fill: #feb81c;
+            }
+            .cls-3 {
+              fill: #ffe2a2;
+            }
+            .cls-4 {
+              fill: #ffd475;
+            }
+            .cls-5 {
+              fill: #ffc649;
+            }
+            .cls-6 {
+              fill: #fdc74d;
+            }
+            .cls-7 {
+              fill: #ffd37a;
+            }
+          </style>
+        </defs>
+        <path
+          id="x01"
+          d="M46.64 0H0v46.78h6.16L52.8.22C50.76.09 48.71 0 46.64 0Z"
+          class="cls-1"
+          data-name="1"
+        />
+        <path
+          id="x02"
+          d="M62.82 49.5V1.38A95.1 95.1 0 0 0 52.8.22L6.16 46.78h40.48a49.11 49.11 0 0 1 16.18 2.72Z"
+          class="cls-2"
+          data-name="2"
+        />
+        <path
+          id="x03"
+          d="m72 53.86 33.67-33.56A95.19 95.19 0 0 0 62.82 1.38V49.5A48.86 48.86 0 0 1 72 53.86Z"
+          class="cls-1"
+          data-name="3"
+        />
+        <path
+          id="x04"
+          d="m168.16 79.82-54.93-53c-1-.94-2-1.84-3-2.73-1.5-1.33-3-2.6-4.6-3.83L72 53.86a50 50 0 0 1 8.64 6.64l6.61 6.38 23 22.15 16.4 15.82h67.46Z"
+          class="cls-3"
+          data-name="4"
+        />
+        <path
+          id="x05"
+          d="M194.13 104.85h-67.46l39.79 38.36 33.14-33.08-5.47-5.28z"
+          class="cls-1"
+          data-name="5"
+        />
+        <path
+          id="x06"
+          d="m204.13 114.5-4.53-4.37-33.14 33.08 5.12 4.93a95.69 95.69 0 0 0 33.32 20.92V115.2c-.26-.2-.52-.46-.77-.7Z"
+          class="cls-2"
+          data-name="6"
+        />
+        <path
+          id="x07"
+          d="M238.17 128.22a48.76 48.76 0 0 1-33.27-13v53.86q3.6 1.33 7.3 2.37l33.46-43.21Z"
+          class="cls-1"
+          data-name="7"
+        />
+        <path
+          id="x08"
+          d="m245.66 128.22-33.46 43.21a96.27 96.27 0 0 0 26 3.57h25.12v-46.78Z"
+          class="cls-3"
+          data-name="8"
+        />
+        <path
+          id="x09"
+          d="M263.29 128.22V175h54.06l-46.86-46.78h-7.2z"
+          class="cls-1"
+          data-name="9"
+        />
+        <path
+          id="x10"
+          d="M270.49 128.22 317.35 175h11.25l46.86-46.78H270.49z"
+          class="cls-4"
+          data-name="10"
+        />
+        <path
+          id="x11"
+          d="M375.46 128.22 328.6 175h55.2v-46.78h-8.34z"
+          class="cls-5"
+          data-name="11"
+        />
+        <path
+          id="x12"
+          d="M383.8 128.22V175h6.27l46.86-46.78H383.8z"
+          class="cls-3"
+          data-name="12"
+        />
+        <path
+          id="x13"
+          d="M436.93 128.22 390.07 175h56.47v-46.78h-9.61z"
+          class="cls-1"
+          data-name="13"
+        />
+        <path
+          id="x14"
+          d="M485.08 128.22h-38.54V175h38.54a95.8 95.8 0 0 0 40.37-8.87l-38-38c-.81.07-1.59.09-2.37.09Z"
+          class="cls-2"
+          data-name="14"
+        />
+        <path
+          id="x15"
+          d="m487.41 128.17 38 38a95.71 95.71 0 0 0 26.21-18l32.48-31.31h-67.61a48.75 48.75 0 0 1-29.08 11.31Z"
+          class="cls-3"
+          data-name="15"
+        />
+        <path
+          id="x16"
+          d="M519.11 114.5c-.85.81-1.73 1.58-2.62 2.33h67.65l16.94-16.33-33.14-33.08Z"
+          class="cls-4"
+          data-name="16"
+        />
+        <path
+          id="x17"
+          d="m610 26.86-42.06 40.56 33.14 33.08 10.24-9.88v-65c-.43.44-.88.82-1.32 1.24Z"
+          class="cls-6"
+          data-name="17"
+        />
+        <path
+          id="x18"
+          d="M611.32 25.65v65l31.25-30.15a48.83 48.83 0 0 1 16.84-10.62l-34.72-34.65a96.32 96.32 0 0 0-13.37 10.42Z"
+          class="cls-5"
+          data-name="18"
+        />
+        <path
+          id="x19"
+          d="m624.69 15.23 34.72 34.65c.83-.31 1.67-.6 2.52-.86V1.13a95.11 95.11 0 0 0-37.24 14.1Z"
+          class="cls-1"
+          data-name="19"
+        />
+        <path
+          id="x20"
+          d="M676.6 0a96.44 96.44 0 0 0-14.67 1.13V49a49 49 0 0 1 14.67-2.24h56.9L686.64 0Z"
+          class="cls-7"
+          data-name="20"
+        />
+        <path
+          id="x21"
+          d="m686.64 0 46.86 46.78h3.68V0h-50.54z"
+          class="cls-3"
+          data-name="21"
+        />
+        <path
+          id="x22"
+          d="M737.18 0v46.78h5.52L789.56 0h-52.38z"
+          class="cls-2"
+          data-name="22"
+        />
+        <path
+          id="x23"
+          d="M789.56 0 742.7 46.78H800V0h-10.44z"
+          class="cls-1"
+          data-name="23"
+        />
+      </svg>
+      <div id="bgExit"></div>
+    </div>
+    <script>
+      function theCircus() {
+        var tl = gsap.timeline()
+
+        const randRot = gsap.utils.random(-120, 120, true)
+
+        const ribbonRange = (start, end) => {
+          const range = Math.abs(end - start) + 1
+          const step = start <= end ? 1 : -1
+          return Array(range)
+            .fill()
+            .map((_, idx) => `#ribbon>path:nth-of-type(${start + idx * step})`)
+        }
+
+        tl.add("scene1")
+          .to("#ribbon", {
+            x: "-300",
+            y: "125",
+            rotation: "40",
+            scale: 1,
+            opacity: 1,
+            duration: 0.15,
+          })
+          .fromTo(
+            ribbonRange(3, 16),
+            {
+              rotation: randRot,
+              scale: 0.5,
+              transformOrigin: "0% 0% -200px",
+              opacity: 0,
+            },
+            {
+              rotation: 0,
+              scale: 1,
+              opacity: 1,
+              stagger: {
+                each: 0.1,
+                repeat: 1,
+                yoyo: true,
+                repeatDelay: 0.5,
+              },
+            },
+            "scene1"
+          )
+
+        tl.to(
+          "#text_1",
+          { duration: 1, opacity: 1, ease: "power1.easeInOut" },
+          "scene1"
+        )
+        tl.to(
+          "#text_2",
+          { duration: 0.5, opacity: 1, x: 4, ease: "back.out(1.7)" },
+          "scene1"
+        )
+        tl.to("#bottomBar", { duration: 0.5, opacity: 1 }, "scene1")
+        tl.to("#logo", { duration: 0.5, opacity: 1 }, "scene1")
+
+        tl.add("scene2")
+          .to("#ribbon", {
+            x: "-300",
+            y: "50",
+            rotation: "-40",
+            scale: 1,
+            opacity: 1,
+            duration: 0,
+          })
+          .fromTo(
+            ribbonRange(3, 16),
+            {
+              rotation: randRot,
+              scale: 0.5,
+              transformOrigin: "0% 0% -200px",
+              opacity: 0,
+            },
+            {
+              rotation: 0,
+              scale: 1,
+              opacity: 1,
+              stagger: {
+                each: 0.15,
+                repeat: 1,
+                yoyo: true,
+                repeatDelay: 0.75,
+              },
+            },
+            "scene2"
+          )
+        tl.to("#text_2", { duration: 0.5, x: 4, opacity: 0 }, "scene2")
+        tl.to("#text_3", { duration: 0.5, y: -4, opacity: 1 }, "scene2+=0.5")
+
+        tl.add("scene3")
+          .to("#ribbon", {
+            x: "-300",
+            y: "125",
+            rotation: "45",
+            scale: 1,
+            opacity: 1,
+            duration: 0.15,
+          })
+          .fromTo(
+            ribbonRange(3, 16),
+            {
+              rotation: randRot,
+              scale: 0.5,
+              transformOrigin: "0% 0% -200px",
+              opacity: 0,
+            },
+            {
+              rotation: 0,
+              scale: 1,
+              opacity: 1,
+              stagger: {
+                each: 0.1,
+                repeat: 1,
+                yoyo: true,
+                repeatDelay: 0.5,
+              },
+            },
+            "scene3"
+          )
+
+        tl.to("#text_3", { duration: 0.5, x: 4, opacity: 0 }, "scene3")
+        tl.to("#text_4", { duration: 0.5, x: 4, opacity: 1 }, "scene3+=0.5")
+
+        tl.add("scene4")
+        tl.to("#text_1", { duration: 0.5, opacity: 0 }, "scene4")
+        tl.to("#text_4", { duration: 0.5, x: 4, opacity: 0 }, "scene4")
+        tl.to(
+          "#bottomBar",
+          { duration: 0.5, height: "600px", ease: "power2.inOut" },
+          "scene4+=1"
+        )
+        tl.to("#text_5", { duration: 0.5, y: -2, opacity: 1 }, "scene4+=1.5")
+
+        tl.add("scene5", "+=2.5")
+          .to("#ribbon", {
+            x: "-493",
+            y: "213",
+            rotation: "0",
+            scale: 1,
+            opacity: 1,
+          })
+          .fromTo(
+            ribbonRange(19, 10),
+            {
+              rotation: randRot,
+              scale: 0.5,
+              transformOrigin: "0% 0% -200px",
+              opacity: 0,
+            },
+            { rotation: 0, scale: 1, opacity: 1, stagger: 0.2 },
+            "scene5"
+          )
+
+        tl.to("#logo", { duration: 0.5, opacity: 0 }, "scene5")
+        tl.to("#photo", { duration: 0.5, opacity: 1 }, "scene5")
+        tl.to("#logo_2", { duration: 0.5, opacity: 1 }, "scene5+=.5")
+        tl.to("#bottomBar", { duration: 0.5, x: "-=4", opacity: 0 }, "scene5")
+        tl.to("#text_5", { duration: 0.5, x: "-=4", opacity: 0 }, "scene5")
+        tl.to("#text_6", { duration: 0.5, y: 4, opacity: 1 }, "scene5+=.5")
+        tl.to("#cta", { duration: 0.5, opacity: 1 }, "scene5+=1")
+        tl.to("#cta_text", { duration: 0.5, opacity: 1 }, "scene5+=1")
+
+        return tl
+      }
+
+      function adjustImageSizes() {
+        const images = document.querySelectorAll("img")
+        images.forEach((img) => {
+          const adjustSize = () => {
+            if (img.id === "photo") {
+              return
+            }
+            img.style.width = img.naturalWidth / 2 + "px"
+            img.style.height = img.naturalHeight / 2 + "px"
+          }
+          if (img.complete) {
+            adjustSize()
+          } else {
+            img.onload = adjustSize
+          }
+        })
+      }
+
+      function adVisible() {
+        adjustImageSizes()
+        const tl = theCircus()
+      }
+      window.addEventListener("load", adVisible)
+    </script>
+  </body>
+</html>
