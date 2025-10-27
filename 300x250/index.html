@@ -1,0 +1,336 @@
+<html>
+  <head>
+    <title>300x250</title>
+    <meta name="ad.size" content="width=300,height=250" />
+    <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.11.5_min.js"></script>
+    <meta name="ad.size" content="width=300,height=250" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .banner {
+        background-color: #061b2c;
+        width: 298px;
+        height: 248px;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid black;
+        color: white;
+        cursor: pointer;
+      }
+      img {
+        position: absolute;
+        opacity: 0;
+      }
+      #logo {
+        top: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+      }
+      #logo_2 {
+        top: 102px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+      }
+      #bottomBar {
+        position: absolute;
+        opacity: 0;
+        bottom: 0;
+        width: 300px;
+        height: 48px;
+        background-color: #ffb81c;
+        z-index: 0;
+      }
+      #finalBox {
+        position: absolute;
+        opacity: 0;
+        bottom: 0px;
+        width: 300px;
+        height: 74px;
+        background-color: #ffb81c;
+        z-index: 0;
+      }
+      #text_1 {
+        top: 80px;
+        left: 16px;
+      }
+      #text_1b {
+        top: 17px;
+        left: 24px;
+      }
+      #text_2 {
+        top: 65px;
+        left: 26px;
+      }
+      #text_3 {
+        top: 80px;
+        left: 16px;
+      }
+      #text_4 {
+        top: 19px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      #text_5 {
+        top: 211px;
+        left: 30px;
+      }
+      #cta_text {
+        opacity: 0;
+        background-color: transparent;
+        position: absolute;
+        cursor: pointer;
+        z-index: 2;
+        top: 228px;
+        left: 218px;
+        width: 300px;
+        font-size: 6px;
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #061b2c;
+      }
+      #cta_text:hover {
+        opacity: 0.5;
+      }
+      #cta {
+        top: 193px;
+        left: 160px;
+        z-index: 3;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="banner" class="banner">
+      <div id="bottomBar"></div>
+      <div id="finalBox"></div>
+      <img
+        src="logo.png"
+        id="logo"
+        width="100"
+        height="30"
+        alt="American National Logo"
+      />
+      <img
+        src="logo_2.png"
+        id="logo_2"
+        width="100"
+        height="30"
+        alt="American National Logo"
+      />
+      <img
+        id="bgImg"
+        src="bg.png"
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 300px;
+          opacity: 0;
+          z-index: 0;
+        "
+        alt="Background"
+      />
+      <img
+        id="text_1a"
+        src="text_1a.png"
+        style="position: absolute; top: 40px; left: 23px; opacity: 0"
+      />
+      <img
+        id="text_1"
+        src="text_1.png"
+        style="position: absolute; top: 65px; left: 14px; opacity: 0"
+      />
+      <img id="text_1b" src="text_1b.png" />
+      <img id="text_2" src="text_2.png" height="40" width="100" alt="Growth" />
+      <img
+        id="text_3"
+        src="text_3.png"
+        height="40"
+        width="100"
+        alt="Text 3"
+        style="position: absolute; top: 65px; left: 16px; opacity: 0"
+      />
+      <img id="text_4" src="text_4.png" />
+      <img id="text_5" src="text_5.png" height="40" width="100" alt="Text 5" />
+      <span id="cta_text">Click for Details</span>
+      <img id="cta" src="button_up.png" alt="CTA Button" />
+      <div id="bgExit"></div>
+    </div>
+    <script>
+      // Animation configuration
+      const TIMING = {
+        sceneDuration: 2, // Time between scenes
+        fadeSpeed: 0.5, // Fade in/out speed
+        slideDistance: 10, // Horizontal slide distance in pixels
+      }
+
+      function createTimeline() {
+        var tl = gsap.timeline()
+
+        // SCENE 1: Background + Logo + Initial text
+        tl.add("scene1")
+          .to("#bgImg", { duration: TIMING.fadeSpeed, opacity: 1 }, "scene1")
+          .to(
+            "#text_1a",
+            { duration: 1, opacity: 1, ease: "back.out(1.7)" },
+            "scene1"
+          )
+          .to(
+            "#text_1b",
+            { duration: 1, opacity: 1, ease: "power3.out" },
+            "scene1"
+          )
+          .to(
+            "#text_1",
+            {
+              duration: 1,
+              opacity: 1,
+              x: `+=${TIMING.slideDistance}`,
+              ease: "power4.out",
+            },
+            "scene1+=0.2"
+          )
+          .to("#logo", { duration: TIMING.fadeSpeed, opacity: 1 }, "scene1")
+
+        // SCENE 2: Swap text_1 for text_2
+        tl.add("scene2", `+=${TIMING.sceneDuration}`)
+          .to(
+            "#text_1",
+            {
+              duration: TIMING.fadeSpeed,
+              x: `+=${TIMING.slideDistance}`,
+              opacity: 0,
+            },
+            "scene2"
+          )
+          .to(
+            "#text_2",
+            { duration: TIMING.fadeSpeed, opacity: 1 },
+            "scene2+=0.5"
+          )
+
+        // SCENE 3: Swap text_2 for text_3
+        tl.add("scene3", `+=${TIMING.sceneDuration}`)
+          .to(
+            "#text_2",
+            {
+              duration: TIMING.fadeSpeed,
+              x: `+=${TIMING.slideDistance}`,
+              opacity: 0,
+            },
+            "scene3"
+          )
+          .to(
+            "#text_3",
+            {
+              duration: TIMING.fadeSpeed,
+              x: `+=${TIMING.slideDistance}`,
+              opacity: 1,
+            },
+            "scene3+=0.5"
+          )
+
+        // SCENE 4: Final CTA scene - fade out all previous, fade in CTA elements
+        tl.add("scene4", `+=${TIMING.sceneDuration}`)
+          // Fade out previous scene
+          .to("#bgImg", { duration: TIMING.fadeSpeed, opacity: 0 }, "scene4")
+          .to("#text_3", { duration: TIMING.fadeSpeed, opacity: 0 }, "scene4")
+          .to("#text_1b", { duration: TIMING.fadeSpeed, opacity: 0 }, "scene4")
+          .to("#text_1a", { duration: TIMING.fadeSpeed, opacity: 0 }, "scene4")
+          .to("#logo", { duration: TIMING.fadeSpeed, opacity: 0 }, "scene4")
+          // Fade in final scene
+          .to(
+            "#finalBox",
+            { duration: TIMING.fadeSpeed, opacity: 1 },
+            "scene4+=.5"
+          )
+          .to(
+            "#text_4",
+            { duration: TIMING.fadeSpeed, opacity: 1 },
+            "scene4+=.5"
+          )
+          .to(
+            "#logo_2",
+            { duration: TIMING.fadeSpeed, opacity: 1 },
+            "scene4+=.5"
+          )
+          // CTA and text_5 come in last
+          .to(
+            "#text_5",
+            {
+              duration: TIMING.fadeSpeed,
+              ease: "back.out(1.7)",
+              y: `-=${TIMING.slideDistance}`,
+              opacity: 1,
+            },
+            "scene4+=1"
+          )
+          .to("#cta", { duration: TIMING.fadeSpeed, opacity: 1 }, "scene4+=1")
+          .to(
+            "#cta_text",
+            { duration: TIMING.fadeSpeed, opacity: 1 },
+            "scene4+=1"
+          )
+
+        return tl
+      }
+
+      // Scale all images to 50% of their natural size
+      function adjustImageSizes() {
+        const images = document.querySelectorAll("img")
+        images.forEach((img) => {
+          const adjustSize = () => {
+            img.style.width = img.naturalWidth / 2 + "px"
+            img.style.height = img.naturalHeight / 2 + "px"
+          }
+          if (img.complete) {
+            adjustSize()
+          } else {
+            img.onload = adjustSize
+          }
+        })
+      }
+
+      // Click handler for banner exit
+      function handleBannerClick(e) {
+        Enabler.exit("CTA Exit")
+      }
+
+      // Initialize the banner when ad is visible
+      function initBanner() {
+        document
+          .getElementById("banner")
+          .addEventListener("click", handleBannerClick)
+        adjustImageSizes()
+        createTimeline()
+      }
+
+      // Google Studio Enabler initialization
+      function enablerInitialized() {
+        if (!Enabler.isVisible()) {
+          Enabler.addEventListener(
+            studio.events.StudioEvent.VISIBLE,
+            initBanner
+          )
+        } else {
+          initBanner()
+        }
+      }
+
+      if (!Enabler.isInitialized()) {
+        Enabler.addEventListener(
+          studio.events.StudioEvent.INIT,
+          enablerInitialized
+        )
+      } else {
+        enablerInitialized()
+      }
+    </script>
+  </body>
+</html>
